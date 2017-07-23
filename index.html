@@ -116,7 +116,9 @@
   </div>
 </div>
 <script>
+  //闰年12个月份天数
   const month_olympic=[31,29,31,30,31,30,31,31,30,31,30,31];
+  // 平年12个月对应天数
   const month_normal=[31,28,31,30,31,30,31,31,30,31,30,31];
   const month_name=['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
   const holder=document.getElementById('days');
@@ -124,10 +126,10 @@
   const next=document.getElementById('next');
   const ctitle=document.getElementById('calendar-title');
   const cyear=document.getElementById('calendar-year');
-  let my_date=new Date();
-  let my_year=my_date.getFullYear();
-  let my_month=my_date.getMonth();
-  let my_day=my_date.getDate();
+  let my_date=new Date();     //创建一个Date实例 也就是当前时间
+  let my_year=my_date.getFullYear();   //获取年份
+  let my_month=my_date.getMonth();    // 获取月份
+  let my_day=my_date.getDate();      //获取号
 
   function refreshDate(){
     let str='';
@@ -161,7 +163,7 @@
   }
   function dayStart(month,year){
     let tmpDate=new Date(year,month,1);
-    return (tmpDate.getDay());
+    return (tmpDate.getDay());     //getDay() 获取本月的第一天是星期几
   }
    refreshDate();
    prev.addEventListener('click',function(e){
